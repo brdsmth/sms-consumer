@@ -1,5 +1,5 @@
 # Use an official Go runtime as a parent image
-FROM golang:1.16
+FROM golang:1.21
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Build the Go application inside the container
-RUN go build -o consumer
+RUN go build -o sms-consumer
 
 # Define the command to run your Consumer service
 CMD ["./sms-consumer"]
